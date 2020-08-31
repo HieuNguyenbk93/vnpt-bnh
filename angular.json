@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "vnpt-bnh"
+    }
+  },
+  "defaultProject": "vnpt-bnh",
+  "cli": {
+    "analytics": "9e0131bb-97a7-4ff7-8cac-92a3e6fa2e41"
+  }
 }
