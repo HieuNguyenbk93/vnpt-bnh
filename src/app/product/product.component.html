@@ -1,0 +1,62 @@
+<p>Trang quản lý sản phẩm</p>
+<a [routerLink]="['/product-add']" routerLinkActive="router-link-active">
+  Thêm mới
+</a>
+<hr>
+
+<table class="table">
+  <thead>
+    <th>ID sản phẩm</th>
+    <th>Tên sản phẩm</th>
+    <th>ID loại sản phẩm</th>
+    <th>Tên loại sản phẩm</th>
+    <th>Giá</th>
+    <th>Số lượng</th>
+    <th>Nhà cung cấp</th>
+    <th>Ngày tạo</th>
+    <th>Chức năng</th>
+  </thead>
+  <tbody *ngIf="total == 0">
+    <tr>
+      <td>
+        Chưa có dữ liệu
+      </td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="total > 0">
+    <tr *ngFor="let item of product">
+      <td>
+        {{item.Id}}
+      </td>
+      <td>
+        {{item.ProductName}}
+      </td>
+      <td>
+        {{item.CategoryId}}
+      </td>
+      <td>
+        {{item.CategoryName}}
+      </td>
+      <td>
+        {{item.Price}}
+      </td>
+      <td>
+        {{item.Amount}}
+      </td>
+      <td>
+        {{item.Supplier}}
+      </td>
+      <td>
+        {{item.CreateDate}}
+      </td>
+      <td>
+        <a [routerLink]="['/product-edit/' + item.Id]" routerLinkActive="router-link-active">
+          Sửa
+        </a>
+        <a (click)="remove(item.Id)" href="javascript:;">
+          Xóa
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

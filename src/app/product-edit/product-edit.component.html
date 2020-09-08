@@ -1,0 +1,35 @@
+<p>Sửa sản phẩm</p>
+<a [routerLink]="['/product']" routerLinkActive="router-link-active">
+  Về lại danh sách
+</a>
+
+<form [formGroup]="model.formGroup" (ngSubmit)="submitData()">
+  <div class="form-group">
+    <div class="form-group">
+      <label>Tên sản phẩm</label>
+      <input class="form-control" type="text" [(ngModel)]="model.productName" formControlName="productName">
+    </div>
+    <div class="form-group">
+      <label>ID loại sản phẩm</label>
+      <select class="form-control" [(ngModel)]="model.productIdType" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let item of loaisanpham" [value]="item.id">{{item.categoryName}}</option>
+      </select>
+    </div>
+    <div class="form-group" >
+      <label>Giá</label>
+      <input class="form-control" type="number" [(ngModel)]="model.productPrice" formControlName="price">
+    </div>
+    <div class="form-group">
+      <label>Số lượng</label>
+      <input class="form-control" type="number" [(ngModel)]="model.productAmount" formControlName="amount">
+    </div>
+    <div class="form-group">
+      <label>Nhà cung cấp</label>
+      <input class="form-control" type="text" [(ngModel)]="model.productSupplier" formControlName="supplier">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!(model.formGroup.valid)">
+    Lưu
+  </button>
+</form>
+

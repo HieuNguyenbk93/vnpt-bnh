@@ -1,0 +1,24 @@
+<h2>Login</h2>
+<p>{{message}}</p>
+
+<!--<form>
+  User ID: <input [(ngModel)]="username" name='username' type='text'>
+  Password: <input [(ngModel)]="password" name='password' type="password">
+  <button (click)="signIn()">Đăng nhập</button>
+</form>-->
+<hr>
+
+<table>
+  <tr>
+    <td>User ID:</td>
+    <td><input [(ngModel)]="username" type='text'></td>
+  </tr>
+  <tr>
+    <td>Password:</td>
+    <td><input [(ngModel)]="password" type="password"></td>
+  </tr>
+  <tr>
+    <button (click)="signIn()">Đăng nhập</button>
+  </tr>
+</table>
+

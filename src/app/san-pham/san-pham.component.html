@@ -1,0 +1,39 @@
+<!--Nhận data oneway từ ts qua dấu {{}}-->
+<p>{{ message }}</p>
+
+<hr>
+<a [routerLink]="['/sanpham-add']" routerLinkActive="router-link-active">
+  Thêm mới
+</a>
+<table>
+  <thead>
+    <th>Mã danh mục</th>
+    <th>Tên danh mục</th>
+    <th>Chức năng</th>
+  </thead>
+  <tbody *ngIf="total == 0">
+    <tr>
+      <td>
+        Chưa có dữ liệu
+      </td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="total > 0">
+    <tr *ngFor="let item of san_pham">
+      <td>
+        {{item.id}}
+      </td>
+      <td>
+        {{item.categoryName}}
+      </td>
+      <td>
+        <a [routerLink]="['/sanpham-edit/' + item.id]" routerLinkActive="router-link-active">
+          Sửa
+        </a>
+        <a (click)="remove(item.id)" href="javascript:;">
+          Xóa
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
